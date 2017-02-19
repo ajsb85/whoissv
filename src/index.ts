@@ -1,1 +1,1 @@
-console.log('Whois REST API');
+console.log('Whois REST API.');
