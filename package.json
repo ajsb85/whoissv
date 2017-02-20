@@ -4,14 +4,24 @@
   "description": "Whois REST API built with Express and TypeScript",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.17.1",
+    "debug": "^2.6.1",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1",
     "typescript": "^2.2.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-typescript": "^3.1.5",
-    "typescript": "^2.2.1"
+    "typescript": "^2.2.1",
+    "@types/body-parser": "^0.0.34",
+    "@types/debug": "^0.0.29",
+    "@types/express": "^4.0.35",
+    "@types/morgan": "^1.7.32",
+    "@types/node": "^7.0.5"
   },
   "scripts": {
+    "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
