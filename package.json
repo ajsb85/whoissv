@@ -8,7 +8,9 @@
     "debug": "^2.6.1",
     "express": "^4.15.2",
     "morgan": "^1.8.1",
-    "typescript": "^2.2.1"
+    "parse-whois": "^1.0.0",
+    "typescript": "^2.2.1",
+    "whois": "^2.3.8"
   },
   "devDependencies": {
     "@types/body-parser": "^0.0.34",
