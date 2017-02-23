@@ -3,8 +3,7 @@ import * as debug from 'debug';
 import * as express from 'express';
 
 import { WhoisService } from './WhoisService';
-
-const WhoisExpress = new WhoisService(express()).express
+const WhoisExpress = new WhoisService(express()).express;
 
 debug('ts-express:server');
 

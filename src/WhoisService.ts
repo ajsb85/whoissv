@@ -1,7 +1,10 @@
 import * as path from 'path';
 import * as express from 'express';
+import { Router, Request, Response, NextFunction, Application } from 'express';
 import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
+import * as whoisParser from 'parse-whois';
+import * as whois from 'whois';
 
 export class WhoisService {
 
@@ -18,19 +21,28 @@ export class WhoisService {
   }
 
   private routes(): void {
-    let router = express.Router();
+    const router = express.Router();
 
     router.get('/', (req, res, next) => {
       res.json({
-        message: 'Knock, knock...'
+        usage: '/whois/domain.ch'
       });
-    }).get('/whois', (req, res, next) => {
-      res.json({
-        message: 'The hidden-jokes-on-git-man!',
-        note: 'Found this - send me a tweet and if you are the first you\'ll get a free book!'
-      });
+    })
+
+    router.get('/whois/:domain', (req, res, next) => {
+      this.whois(req, res, next);
     });
+
     this.express.use('/', router);
+  }
+
+  private whois(request: Request, response: Response, nextFunction: NextFunction) {
+    const domain = request.params.domain;
+    whois.lookup(domain, (error, whoisOutput) => {
+      if(error) throw error;
+      
+      response.json(whoisParser.parseWhoIsData(whoisOutput));
+    });
   }
 
 }

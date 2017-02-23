@@ -18,17 +18,18 @@ describe('baseRoute', () => {
     });
   });
 
-  it('should knock knock', () => {
+  it('should show usage', () => {
     return chai.request(WhoisExpress).get('/')
     .then(res => {
-      expect(res.body.message).to.contain('Knock')
+      expect(res.body.usage).to.contain('whois')
     });
   });
 
-  it('should make joke', () => {
-    return chai.request(WhoisExpress).get('/whois')
+  it('should have github.com in it', () => {
+    return chai.request(WhoisExpress).get('/whois/github.com')
     .then(res => {
-      expect(res.body.message).to.contain('joke')
+      
+      expect(res.body[0]['value']).to.contain('github.com');
     });
   });
 
