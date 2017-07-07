@@ -29,7 +29,7 @@ describe('baseRoute', () => {
     return chai.request(WhoisExpress).get('/whois/github.com')
     .then(res => {
       
-      expect(res.body[0]['value']).to.contain('github.com');
+      expect(res.body[0]['value']).to.contain('GITHUB.COM');
     });
   });
 
