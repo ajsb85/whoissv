@@ -5,12 +5,12 @@
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "debug": "^2.6.8",
-    "express": "^4.15.3",
-    "morgan": "^1.8.2",
+    "debug": "^2.6.9",
+    "express": "^4.19.2",
+    "morgan": "^1.9.1",
     "parse-whois": "^1.0.0",
     "typescript": "^2.4.1",
-    "whois": "^2.3.9"
+    "whois": "^2.13.6"
   },
   "devDependencies": {
     "@types/body-parser": "^1.16.4",
